@@ -12,6 +12,7 @@ fs.promises.readdir(folderPath, { withFileTypes: true }).then(filenames => {
       promises.push(readFromFile(path.join(folderPath, fileData.name)));
     }
   }
+
   Promise.all(promises).then(() => {
 
     let fileOutPath = path.join(__dirname, '/project-dist', '/bundle.css');
