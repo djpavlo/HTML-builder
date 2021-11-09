@@ -7,7 +7,7 @@ let folderToPath = path.join(__dirname, '/files-copy/');
 
 
 
-fs.rmdir(folderToPath, { recursive: true }, () => {
+fs.rm(folderToPath, { recursive: true }, () => {
   fs.mkdir(folderToPath, { recursive: true }, () => {
     fs.promises.readdir(folderFromPath, { withFileTypes: true }).then(filenames => {
       for (let fileData of filenames) {

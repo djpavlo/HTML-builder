@@ -6,7 +6,7 @@ let templatefilePath = path.join(__dirname, '/template.html');
 let componentsPath = path.join(__dirname, '/components/');
 let template = '';
 
-fs.rmdir(folderProjectPath, { recursive: true }, () => { //remove folder
+fs.rm(folderProjectPath, { recursive: true }, () => { //remove folder
   fs.mkdir(folderProjectPath, { recursive: true }, () => { //create folder
     fs.readFile(templatefilePath, 'utf-8', (err, data) => { //read template file
       if (err) {
