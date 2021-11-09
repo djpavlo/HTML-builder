@@ -11,7 +11,7 @@ fs.promises.readdir(folderPath, { withFileTypes: true }).then(filenames => {
       let filePath = path.join(folderPath, fileData.name);
       fs.stat(filePath, (err, stats) => {
         let fileExt = path.extname(fileData.name);
-        console.log(`${fileData.name.replace(fileExt,'')}-${fileExt.replace('.','')}-${stats.size/1000}kb`);
+        console.log(`${fileData.name.replace(fileExt,'')}-${fileExt.replace('.','')}-${(stats.size/1024).toFixed(3)}kb`);
       });
     }
   }
